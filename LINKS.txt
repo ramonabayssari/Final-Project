@@ -1,0 +1,2 @@
+localhosat/giftbasket/index.php
+localhots/giftbasket/admin_area/index.php
