@@ -1,0 +1,158 @@
+the user picks the categories they want 
+and directly insert into another table:
+
+DROP TABLE table2;
+
+CREATE TABLE table2(
+	id int, -->AI
+	product_id int,
+)
+
+
+INSERT INTO table2 t (t.product_id)
+SELECT p.product_id 
+FROM products p 
+WHERE p_cat_id IN (value1, value2, ....)
+
+
+-->values depending on the input
+-----------------------------------------------------------------------
+
+Now we insert into another table 
+the user already inputed anumber k as for how many objects he wants in each basket
+
+
+DROP TABLE basket;
+
+CREATE TABLE basket(
+	id int, -->AI
+	p_id1 int,
+	p_id2 int,
+	p_id3 int
+	
+)
+
+
+
+
+this is to know the number of products we are choosing from:
+
+DECLARE @Countoptions INT
+SET @Countotions=SELECT COUNT FROM table2 
+
+
+DECLARE @Counter INT
+SET @Counter=1
+WHILE( @Counter<= POWER(@Countotions, 3)
+
+INSERT INTO basket()
+SELECT column FROM table  
+ORDER BY RAND ( )  
+LIMIT 3
+
+SET @Counter= @Counter+1
+
+END
+
+-------------------------------------------------------------------------
+from table 3 we display all the options by either dresing or incresing order of total price
+so either:
+SELECT *
+FROM table3
+//WHERE(SELECT *
+//FROM products
+//WHERE id= 
+ORDER BY basket_price DESC
+
+or:
+SELECT *
+FROM table3
+ORDER BY basket_price ASC
+
+
+
+
+-----------------------------------------------------------------------------------------
+<form method="post" action="">
+    <span>Select languages</span><br/>
+    <input type="checkbox" name='lang[]' value="PHP"> PHP <br/>
+    <input type="checkbox" name='lang[]' value="JavaScript"> JavaScript <br/>
+    <input type="checkbox" name='lang[]' value="jQuery"> jQuery <br/>
+    <input type="checkbox" name='lang[]' value="Angular JS"> Angular JS <br/>
+
+    <input type="submit" value="Submit" name="submit">
+</form>
+
+<?php
+if(isset($_POST['submit'])){
+
+    if(!empty($_POST['lang'])) {
+
+        foreach($_POST['lang'] as $value){
+            echo "value : ".$value.'<br/>';
+        }
+
+    }
+
+}
+?>
+
+----------------------------------------------------------------------------------------------
+
+
+
+  
+  <form method="post" action="">
+    <span>Select 1 category of interest</span><br/>
+    <input type="checkbox" name='lang[]' value="1"> Clothes <br/>
+    <input type="checkbox" name='lang[]' value="2"> Acsesories <br/>
+    <input type="checkbox" name='lang[]' value="3"> Athletic <br/>
+    <input type="checkbox" name='lang[]' value="4"> House Wear <br/>
+	 <input type="checkbox" name='lang[]' value="5"> Gadgets <br/>
+	 
+	<span>Select the category you would prefer</span><br/>
+    <input type="checkbox" name='lang[]' val="1"> Man <br/>
+    <input type="checkbox" name='lang[]' val="2"> Women <br/>
+    <input type="checkbox" name='lang[]' val="3"> Kids <br/>
+    <input type="checkbox" name='lang[]' val="4"> Other <br/>
+    <input type="submit" value="Submit" name="submit">
+</form>
+<?php
+if(isset($_POST['submit'])){
+
+    if(!empty($_POST['lang'])) {
+
+        foreach($_POST['lang'] as $value){
+            echo "value : ".$value.'<br/>';
+        }
+
+    }
+
+}
+?>
+//---------------------------------------------------------------------------
+
+ <form method="post" action="">
+    <span>Select the category you would prefer</span><br/>
+    <input type="checkbox" name='lang[]' val="1"> Man <br/>
+    <input type="checkbox" name='lang[]' val="2"> Women <br/>
+    <input type="checkbox" name='lang[]' val="3"> Kids <br/>
+    <input type="checkbox" name='lang[]' val="4"> Other <br/>
+
+    <input type="submit" val="Submit" name="submit">
+</form>
+
+<?php
+if(isset($_POST['submit'])){
+
+    if(!empty($_POST['lang'])) {
+
+        foreach($_POST['lang'] as $val){
+            echo "val : ".$val.'<br/>';
+        }
+
+    }
+
+}
+?>
+
